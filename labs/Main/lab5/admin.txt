@@ -1,0 +1,5 @@
+2017.11.02 10:29:10 user: root
+2017.11.02 10:29:10 password: 3687120
+2017.11.02 10:29:10 user logged in
+2017.11.02 10:30:18 added course Literature 
+2017.11.02 10:31:20 added course OOP 

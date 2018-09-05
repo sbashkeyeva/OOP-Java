@@ -1,0 +1,10 @@
+package practice;
+
+import java.util.Map;
+
+public class Listing1 {
+		<T> void foo(Map<T,T> a){
+		Map<Number,Integer>m1= null; foo(m1);
+		} 
+
+}

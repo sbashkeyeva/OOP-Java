@@ -1,0 +1,20 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Gardener p = new Gardener(37);
+		Gardener p2 = new Gardener(3);
+		
+		p.setName("Zhora");
+		p2.setName("Poltos");
+		
+		p.setPriority(Thread.MAX_PRIORITY);
+		
+		p.start();
+		p2.start();
+		
+		
+	}
+
+}

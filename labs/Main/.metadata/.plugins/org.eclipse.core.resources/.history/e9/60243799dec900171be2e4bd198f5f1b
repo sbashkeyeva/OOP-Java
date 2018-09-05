@@ -1,0 +1,59 @@
+import java.util.Date;
+import java.util.*;
+
+public class Gardener extends Thread{
+	int numb=0;
+	Thread thread = new Thread();
+	static Random r=new Random();
+	static boolean[][] x =new boolean[40][40];
+	public Gardener(int n)
+	{
+		this.numb=n;
+	}
+	
+   
+   public synchronized void power()
+   {
+	   int a,b;
+		while(true) {
+		a =r.nextInt(40);
+		b=r.nextInt(40);
+		if(check(a, b,x)) {
+				System.out.println(Thread.currentThread().getName()+" has plant"+ "at :" +new Date());
+				x[a][b] = true;
+			}
+		}
+   }
+   public void run() {
+		for(int i=0; i < numb; i++){
+			try {
+				Thread.sleep(1000, 3000);
+				power();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+   public synchronized boolean check(int index,int ind , boolean x[][]) {
+		if(!x[index][ind]) {
+			return true;
+		}
+		return false;
+	}
+   
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

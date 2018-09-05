@@ -1,0 +1,46 @@
+import java.util.*;
+
+public class Gardener extends Thread {
+	Thread thread = new Thread();
+	static Random r = new Random();
+	static boolean[][] field = new boolean[20][20];
+	int x;
+	int y;
+	public Gardener(int a,int b) {
+		this.x = a;
+		this.y = b;
+	}
+
+	public synchronized void power() {
+		int a, b;
+		while (true) {
+			a = r.nextInt(20);
+			b = r.nextInt(20);
+			if (check(a, b, field)) {
+				System.out.println(Thread.currentThread().getName() + " has plant " + "at :" + a + " " + b);
+				field[a][b] = true;
+			}
+		}
+	}
+
+	public void run() {
+			try {
+				for(int i = 1; i <=; i++ ) {
+							 
+				}
+				Thread.sleep(1000, 3000);
+				power();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public synchronized boolean check(int index, int ind, boolean [][]field) {
+		if (!field[index][ind]) {
+			return true;
+		}
+		return false;
+	}
+
+}

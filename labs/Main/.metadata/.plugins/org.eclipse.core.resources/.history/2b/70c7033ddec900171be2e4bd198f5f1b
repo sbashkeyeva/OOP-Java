@@ -1,0 +1,20 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Planner p = new Planner(37);
+		Planner p2 = new Planner(3);
+		
+		p.setName("Zharas");
+		p2.setName("Elibay");
+		
+		p.setPriority(Thread.MAX_PRIORITY);
+		
+		p.start();
+		p2.start();
+		
+		
+	}
+
+}

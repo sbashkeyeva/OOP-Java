@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Gardener extends Thread {
+	Thread thread = new Thread();
+	static Random r = new Random();
+	static boolean[][] field = new boolean[20][20];
+	int x;
+	int y;
+
+	public Gardener(int a, int b) {
+		this.x = a;
+		this.y = b;
+	}
+	public void run() {
+		try {
+			for (int i = x; i <= 19; i++) {
+				for (int j = 0; j <= 19; j++) {
+					if (field[x][y] != true) {
+						field[x][y] = true;
+					} else
+						continue;
+				}
+			}
+			Thread.sleep(1000, 3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	}

@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Gardener extends Thread {
+	
+	Thread thread = new Thread();
+	static Random r = new Random();
+	static int n = 5, m = 5;
+	static boolean[][] field = new boolean[20][20];
+	int x;
+	int y;
+	int type;
+	public Gardener(int x, int y, int type) {
+		this.x = x;
+		this.y = y;
+		this.type = type;
+	}
+	
+	static synchronized void paint() {
+		
+	}
+
+	public void run() {
+		try {
+			paint()
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+
+}

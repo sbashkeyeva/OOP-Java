@@ -1,0 +1,51 @@
+import java.util.*;
+
+public class Gardener extends Thread {
+	
+	Thread thread = new Thread();
+	static Random r = new Random();
+	static int n = 5, m = 5;
+	static boolean[][] field = new boolean[20][20];
+	int x;
+	int y;
+	int type;
+	public Gardener(int x, int y, int type) {
+		this.x = x;
+		this.y = y;
+		this.type = type;
+	}
+
+	public void run() {
+		try {
+			System.out.println(Thread.currentThread().getName() + " kopayut " + "(" + x + ", " + y + ")");
+			
+			field[x][y] = true;
+			if (type == 0) {
+				if (y + 1 >= m || field[x][y + 1] == true) {
+					x = x + 1;
+					y = 0;
+				} else {
+					y = y + 1;
+				}
+				if (x == n) {
+					Thread.currentThread().stop();
+				}
+			} else {
+				if (x - 1 < 0 || field[x - 1][y] == true) {
+					x = n - 1;
+					y = y - 1;
+				} else {
+					x = x - 1;
+				}
+				if (y < 0) {
+					Thread.currentThread().stop();
+				}
+			}
+			//Thread.sleep(1000, 3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+
+}
